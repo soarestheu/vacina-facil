@@ -1,0 +1,146 @@
+// Calendário Vacinal — SBIm / Ministério da Saúde (atualizado 2024)
+export const vaccines = [
+  { id: 1,  name: 'BCG',                         slug: 'bcg',               diseases: ['Tuberculose grave (meningite, miliar)'],                               manufacturer: 'Bio-Manguinhos',            sus: true  },
+  { id: 2,  name: 'Hepatite B',                  slug: 'hepatite-b',        diseases: ['Hepatite B'],                                                          manufacturer: 'Butantan / MSD',            sus: true  },
+  { id: 3,  name: 'Pentavalente (DTP+Hib+HepB)', slug: 'pentavalente',      diseases: ['Difteria', 'Tétano', 'Coqueluche', 'Meningite por Hib', 'Hepatite B'], manufacturer: 'Butantan',                  sus: true  },
+  { id: 4,  name: 'VIP (Poliomielite Injetável)', slug: 'vip',              diseases: ['Poliomielite (paralisia infantil)'],                                    manufacturer: 'Sanofi',                    sus: true  },
+  { id: 5,  name: 'VRH (Rotavírus Humano)',       slug: 'rotavirus',        diseases: ['Diarreia grave por Rotavírus'],                                         manufacturer: 'GSK',                       sus: true  },
+  { id: 6,  name: 'Pneumocócica 10V',             slug: 'pneumococica-10v', diseases: ['Pneumonia', 'Otite', 'Sinusite', 'Meningite Pneumocócica'],             manufacturer: 'GSK',                       sus: true  },
+  { id: 7,  name: 'Meningocócica C (MenC)',       slug: 'meningococica-c',  diseases: ['Doença Meningocócica C'],                                              manufacturer: 'Novartis / GSK',            sus: true  },
+  { id: 8,  name: 'Febre Amarela',                slug: 'febre-amarela',    diseases: ['Febre Amarela'],                                                       manufacturer: 'Bio-Manguinhos',            sus: true  },
+  { id: 9,  name: 'SCR (Tríplice Viral)',         slug: 'scr',              diseases: ['Sarampo', 'Caxumba', 'Rubéola'],                                       manufacturer: 'Bio-Manguinhos',            sus: true  },
+  { id: 10, name: 'Varicela (Catapora)',          slug: 'varicela',         diseases: ['Varicela (catapora)'],                                                 manufacturer: 'MSD / GSK',                 sus: true  },
+  { id: 11, name: 'Hepatite A',                   slug: 'hepatite-a',       diseases: ['Hepatite A'],                                                          manufacturer: 'GSK / Butantan',            sus: true  },
+  { id: 12, name: 'VOP (Polio Oral)',             slug: 'vop',              diseases: ['Poliomielite (reforço oral)'],                                         manufacturer: 'Bio-Manguinhos',            sus: true  },
+  { id: 13, name: 'DTP (Tríplice Bacteriana)',    slug: 'dtp',              diseases: ['Difteria', 'Tétano', 'Coqueluche'],                                    manufacturer: 'Butantan / Bio-Manguinhos', sus: true  },
+  { id: 14, name: 'Influenza (Gripe)',            slug: 'influenza',        diseases: ['Influenza (gripe sazonal)'],                                           manufacturer: 'Sanofi / Butantan',         sus: true  },
+  { id: 15, name: 'HPV (Papilomavírus)',          slug: 'hpv',              diseases: ['HPV — cânceres de colo de útero, pênis, orofaringe'],                  manufacturer: 'MSD / GSK',                 sus: true  },
+  { id: 16, name: 'Meningocócica ACWY',           slug: 'meningococica-acwy', diseases: ['Doença Meningocócica tipos A, C, W e Y'],                            manufacturer: 'Pfizer / GSK',              sus: false },
+  { id: 17, name: 'Pneumocócica 13V',             slug: 'pneumococica-13v', diseases: ['Pneumonia por 13 sorotipos pneumocócicos'],                            manufacturer: 'Pfizer',                    sus: false },
+  { id: 18, name: 'Hexavalente',                  slug: 'hexavalente',      diseases: ['Difteria', 'Tétano', 'Coqueluche', 'Hib', 'Hepatite B', 'Pólio'],     manufacturer: 'GSK / Sanofi',              sus: false },
+  { id: 19, name: 'dTpa (Gestantes)',             slug: 'dtpa',             diseases: ['Difteria', 'Tétano', 'Coqueluche (pertussis acelular)'],               manufacturer: 'GSK / Sanofi',              sus: true,  gestante: true },
+  { id: 20, name: 'Dengue (Qdenga)',              slug: 'dengue',           diseases: ['Dengue (sorotipo 1, 2, 3 e 4)'],                                      manufacturer: 'Takeda',                    sus: true  },
+]
+
+// Calendário vacinal completo — do nascimento até a vida adulta (SBIm 2024)
+export const schedule = [
+  {
+    age_label: 'Ao nascer',
+    age_months_min: 0, age_months_max: 0,
+    vaccine_ids: [1, 2],
+    notes: 'Ainda na maternidade, nas primeiras horas de vida.',
+    gestante: false
+  },
+  {
+    age_label: '1 mês',
+    age_months_min: 1, age_months_max: 1,
+    vaccine_ids: [2],
+    notes: '2ª dose de Hepatite B.',
+    gestante: false
+  },
+  {
+    age_label: '2 meses',
+    age_months_min: 2, age_months_max: 2,
+    vaccine_ids: [3, 4, 5, 6],
+    notes: '1ª dose das principais vacinas do calendário infantil.',
+    gestante: false
+  },
+  {
+    age_label: '3 meses',
+    age_months_min: 3, age_months_max: 3,
+    vaccine_ids: [7],
+    notes: '1ª dose de Meningocócica C.',
+    gestante: false
+  },
+  {
+    age_label: '4 meses',
+    age_months_min: 4, age_months_max: 4,
+    vaccine_ids: [3, 4, 5, 6],
+    notes: '2ª dose.',
+    gestante: false
+  },
+  {
+    age_label: '5 meses',
+    age_months_min: 5, age_months_max: 5,
+    vaccine_ids: [7],
+    notes: '2ª dose de Meningocócica C.',
+    gestante: false
+  },
+  {
+    age_label: '6 meses',
+    age_months_min: 6, age_months_max: 6,
+    vaccine_ids: [2, 3, 4, 14],
+    notes: '3ª dose de Pentavalente + Hepatite B. Início da vacinação anual contra gripe.',
+    gestante: false
+  },
+  {
+    age_label: '9 meses',
+    age_months_min: 9, age_months_max: 9,
+    vaccine_ids: [8],
+    notes: '1ª dose de Febre Amarela (para regiões indicadas ou viagem).',
+    gestante: false
+  },
+  {
+    age_label: '12 meses',
+    age_months_min: 12, age_months_max: 12,
+    vaccine_ids: [7, 9, 10, 11],
+    notes: 'Reforço de MenC. 1ª dose de SCR, Varicela e Hepatite A.',
+    gestante: false
+  },
+  {
+    age_label: '15 meses',
+    age_months_min: 15, age_months_max: 15,
+    vaccine_ids: [3, 6, 9, 12],
+    notes: '1º reforço de DTP + reforço de Pneumo 10V + 2ª dose SCR + reforço VOP.',
+    gestante: false
+  },
+  {
+    age_label: '4 anos',
+    age_months_min: 48, age_months_max: 48,
+    vaccine_ids: [9, 10, 13, 12],
+    notes: '2º reforço de DTP (tríplice bacteriana), reforço de Varicela e Polio oral.',
+    gestante: false
+  },
+  {
+    age_label: '9 anos',
+    age_months_min: 108, age_months_max: 108,
+    vaccine_ids: [15, 8],
+    notes: 'HPV — 2 doses para meninas e meninos de 9 a 14 anos. Reforço de Febre Amarela (dose única).',
+    gestante: false
+  },
+  {
+    age_label: '10 a 11 anos',
+    age_months_min: 120, age_months_max: 132,
+    vaccine_ids: [7, 16],
+    notes: 'Reforço de MenC ou MenACWY (na rede privada).',
+    gestante: false
+  },
+  {
+    age_label: '11 a 14 anos',
+    age_months_min: 132, age_months_max: 168,
+    vaccine_ids: [15],
+    notes: '2ª dose de HPV (6 meses após a 1ª dose).',
+    gestante: false
+  },
+  {
+    age_label: 'A partir dos 10 anos (anual)',
+    age_months_min: 120, age_months_max: 9999,
+    vaccine_ids: [14],
+    notes: 'Influenza — dose anual recomendada para toda a população.',
+    gestante: false
+  },
+  {
+    age_label: 'Adultos (a cada 10 anos)',
+    age_months_min: 216, age_months_max: 9999,
+    vaccine_ids: [13],
+    notes: 'dT (dupla adulto) — reforço a cada 10 anos ou dTpa uma vez na vida adulta.',
+    gestante: false
+  },
+  {
+    age_label: 'Gestantes',
+    age_months_min: 0, age_months_max: 9999,
+    vaccine_ids: [19, 14],
+    notes: 'dTpa em cada gestação (3º trimestre) + Influenza (qualquer trimestre).',
+    gestante: true
+  },
+]
